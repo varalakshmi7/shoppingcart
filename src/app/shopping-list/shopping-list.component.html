@@ -1,0 +1,29 @@
+
+<div class="filter-cont">
+    <app-filter (filterData)="getFilterCart($event)"></app-filter>
+<div>
+
+<div class="sort-cont">
+    <app-sort (sortedPrices)="getSortPrices($event)"></app-sort>
+</div>
+
+<app-cart-notification [itemsCount]="itemsCount"></app-cart-notification>
+<app-search (searchCartItem)="getSearchedItem($event)"></app-search>
+
+<article>
+    <!-- <app-sort (sortedPrices)="getSortPrices($event)"></app-sort> -->
+    <div class="grid-container">
+        <div *ngFor="let item of displayItems">
+            <img [src]="item.img_url" alt="image">
+            <span>{{item.name}}</span>
+            <p><span>{{item.price - (item.price * item.discount/100) | currency: 'INR'}}</span>
+                <span>{{item.price}}</span>
+                <span>{{item.discount}}% off</span>
+            </p>
+            <button (click)="onSelectItem(item)">Add to Cart</button>
+        </div>
+        </div>
+</article>
+
+
+

@@ -1,0 +1,22 @@
+@import "../../stylings/variables.scss";
+.links i{
+    color: $colorCream;
+    margin-right: 10px;
+    font-size: 20px;
+    position: absolute;
+    top: 25px;
+    right: 50px;
+}
+
+input[type=text]{
+    position: absolute;
+    top: 25px;
+    right: 100px;
+    border-bottom: 1px solid $colorWhite;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color: transparent;
+    outline: none;
+    color: $colorWhite;
+}

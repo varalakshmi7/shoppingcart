@@ -1,0 +1,64 @@
+@import '../styles.scss';
+
+* {
+    box-sizing: border-box;
+    font-family: $myFont;
+  }
+  body {
+    font-family: $myFont;
+  }
+nav{
+    background-color: $colorBlue;
+    display:flex;
+    padding:12px;
+}
+.star-icon{
+    display: flex;
+    flex: 1;
+    justify-content: left;
+    align-items: left;
+}
+.star-icon i {
+    color: $colorYellow;
+}
+.links i{
+    color: $colorWhite;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+footer {
+    background-color: $colorBlue;
+    padding: 0px;
+    text-align: center;
+    color: $colorWhite;
+  }
+  footer p {
+      padding: 3px;
+      margin: 0;
+  }
+
+  .links i:nth-child(2){
+    color: $colorRed;
+    position: relative;
+    right: 15px;
+    top: -6px;
+    font-size: 18px;      
+  }
+
+  span.count{
+      color: $colorWhite;
+    font-size: 12px;
+    position: relative;
+    right: 10px;
+    font-weight: bold;
+    top: -2px;
+
+  }
+
+  
+
+
+
+
+

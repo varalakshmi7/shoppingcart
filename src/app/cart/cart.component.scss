@@ -1,0 +1,83 @@
+@import "../../stylings/variables.scss";
+section{
+    display: -webkit-flex;
+    display: flex;
+    background: $colorCream;
+}
+.container1{
+    flex: 3 ;
+    padding: 10px;
+}
+.container2{
+    flex: 1 ;
+    padding: 10px;
+    border: 1px solid $colorLightGray;
+    margin: 20px;
+    height: 150px;
+    background: $colorWhite;
+}
+.container1 > div{
+    flex-direction: row;
+    border: 1px solid $colorLightGray;
+    padding: 10px;
+    margin:10px;
+    height: 100px;
+    background: $colorWhite;
+}
+p:first-child{
+    border-bottom: 1px solid $colorCream;
+    padding-bottom: 10px;
+    font-weight: bold;
+    font-size: 12px;
+    color: $colorLightGray;
+    font-family: $myFont;
+}
+p > span {
+    float: right;
+}
+
+p:last-child,  span:nth-child(3){
+    font-weight: bold;
+    border-top: 1px solid $colorLightGray;
+    padding-top: 5px;
+    font-size: 12px;
+}
+.container1 > div > img{
+    width: 100px;
+    height:100px;
+  }
+
+  div.price > span {
+     margin: 5px;
+     display: inline-block;
+  }
+  div.price span:nth-child(3){
+      text-decoration: line-through;
+  }
+  div.price span:nth-child(4){
+    color: $colorGreen;
+    font-weight: bold;
+    font-size: 12px;
+  }
+  div.price{
+      position: relative;
+      left: 120px;
+      top: -75px;
+      font-size: 12px;
+  }
+
+ 
+  @media screen and (max-width: 600px) {
+    section {   
+      flex-direction: column;
+    }
+    .conatiner1 {
+        height: 125px !important;
+    }
+    div.price span:nth-child(4){
+        width: 175px !important;
+    }
+    .remove{
+        display: block;
+    }
+  } 

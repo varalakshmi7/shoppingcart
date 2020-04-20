@@ -1,0 +1,37 @@
+@import "../../stylings/variables.scss";
+* {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: $myFont;
+  }
+nav{
+    background-color: $colorBlue;
+    display:flex;
+    padding:12px;
+}
+.star-icon{
+    display: flex;
+    flex: 1;
+    justify-content: left;
+    align-items: left;
+}
+.star-icon i {
+    color: $colorYellow;
+}
+
+footer {
+    background-color: $colorBlue;
+    padding: 0px;
+    text-align: center;
+    color: $colorWhite;
+  }
+  footer p {
+      padding: 3px;
+      margin: 0;
+  }
+  @media screen and (max-width: 700px) {
+    nav {   
+      flex-direction: column;
+    }
+  }

@@ -1,0 +1,77 @@
+@import "../../stylings/variables.scss";
+article {
+    flex: 3;
+    background-color: $colorCream;
+    padding: 10px;
+    
+  }
+  section{
+    display: -webkit-flex;
+    display: flex;
+    flex:1;
+}
+
+.filter-cont{
+  display: -webkit-flex;
+    display: flex;
+    flex:2;
+}
+.sort-cont{
+  display: -webkit-flex;
+    display: flex;
+    flex:3;
+    flex-direction: row;
+}
+  .grid-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .grid-container > div {
+  background-color: $colorWhite;
+  width: 200px;
+  margin: 10px;
+  text-align: left;
+  font-size: 14px;
+  } 
+
+  div > img{
+    width: 200px;
+  }
+
+  p > span {
+      padding: 5px;
+      font-size: 12px;
+  }
+   
+  p span:first-child {
+      font-weight: bold;
+  }
+  p span:last-child {
+      color: $colorGreen;
+      font-weight: bold;
+  }
+  p span:nth-child(2) {
+      color: $colorGray;
+      text-decoration: line-through;
+  }
+  button {
+     color: $colorBlack;
+     background: $colorYellow;
+     font-weight: bold;
+     border-radius: 12px;
+    border-style: none;
+     font-size: 11px; 
+     padding:5px;
+     margin-bottom: 10px;
+     margin-left: 50px;
+     outline: none;
+     cursor: pointer;
+  }
+
+@media screen and (max-width: 600px) {
+  section, .sort-cont, .filter-cont {   
+    flex-direction: column;
+  }
+  
+}

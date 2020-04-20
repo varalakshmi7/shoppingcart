@@ -1,0 +1,6 @@
+<i class="fa fa-shopping-cart fa-2x" (click)="gottoCart()"></i>
+<div>
+    <i class="fa fa-circle fa-2x" *ngIf="itemsCount" (click)="gottoCart()">
+        <span class="count" (click)="gottoCart()">{{itemsCount}}</span>
+    </i>
+</div>
