@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, Inject } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { SharedService } from '../shared.service';
 import {DOCUMENT} from '@angular/common';
 import { Observable } from 'rxjs';
@@ -12,12 +12,12 @@ import { AppState } from '../state';
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
-@ViewChild ('quantity') ele: ElementRef;
   cartItems: any;
   total: number;
   counter$ : Observable<number>;
+  itemCount : any;
+  priceDetails = {price: null, discount: null, total: null};
   constructor(private sharedService: SharedService,
-     @Inject(DOCUMENT) document,
      public store : Store<AppState>
      ) { 
       this.counter$ = this.store.select('count'); 
@@ -25,12 +25,42 @@ export class CartComponent implements OnInit {
 
   ngOnInit(): void {
     this.cartItems = this.sharedService.getSelectedItems();
+    if(this.cartItems){
+      this.cartItems.forEach((item) => {
+      this.priceDetails.discount = item.discount;
+      this.priceDetails.price = item.price;
+      this.priceDetails.total = item.price - (item.price * item.discount/100);
+      });
+    }
+   
   }
-  increase(){
+  increase(item){
       this.store.dispatch(new increment());
+      this.counter$.subscribe(data => {
+        this.itemCount = data['count'];
+        this.priceDetails.price = item.price * this.itemCount;
+        this.priceDetails.total = this.priceDetails.price - (this.priceDetails.price * this.priceDetails.discount/100);
+      });
+     
   }
-  decrease(){
-    this.store.dispatch(new decrement());
+  decrease(item){
+  
+      this.store.dispatch(new decrement());
+      this.counter$.subscribe(data => {
+        this.itemCount = data;
+      });
+    
+  }
+
+  removeItem(i) { console.log(this.cartItems);
+      if(i > -1){
+        this.cartItems.splice(i,1);
+       }
+       if(this.cartItems.length === 0){
+        this.priceDetails.discount = null;
+        this.priceDetails.price = null;
+        this.priceDetails.total = null;
+       }
   }
 
 }

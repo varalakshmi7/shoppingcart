@@ -8,17 +8,22 @@
                 <span>{{item.price - (item.price * item.discount/100) | currency: 'INR'}}</span>
                 <span>{{item.price}}</span>
                 <span>{{item.discount}}% off</span>
-                <button (click)="increase()">+</button>
+                <button (click)="increase(item)">+</button>
                 <span>{{ (counter$ | async)?.count }} </span>
-                <button (click)="decrease()">-</button>
-                <span class="remove">REMOVE</span>
+                <button (click)="decrease(item)">-</button>
+                <span class="remove" (click)="removeItem(i)">REMOVE</span>
             </div>
+            
+            
+            
         </div>
     </div>
     <div class="container2">
-        <p>PRICE DETAILS</p>
-        <p>Price (item) : <span>$800</span></p>
-        <p>Discount : <span>$900</span></p>
-        <p>Total Payable <span>$900</span></p>
+         <!-- <app-price-details [priceDetails]="priceDetails"></app-price-details> -->
+         <p>PRICE DETAILS</p>
+         <p>Price (item) {{ (counter$ | async)?.count }} : <span>{{this.priceDetails.price | currency: 'INR'}}</span></p>
+         <p>Discount : <span>{{priceDetails.discount | currency: 'INR'}}</span></p>
+         <p>Total Payable <span>{{priceDetails.total | currency: 'INR'}}</span></p>
     </div>
+   
 </section>

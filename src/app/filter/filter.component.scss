@@ -64,3 +64,25 @@ button {
   outline: none;
   cursor: pointer;
 }
+
+p > span{
+  font-size: 12px;
+  font-family: $myFont;
+}
+p span:last-child{
+  position: relative !important;
+  left: 85px;
+  top: 30px;
+}
+p span:first-child{
+  position: relative !important;
+  right: 5px;
+  top:30px;
+}
+
+@media screen and(max-width: 600px){
+ #price-tag{
+   position: relative;
+   right: 100px;
+ }
+}

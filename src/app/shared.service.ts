@@ -1,8 +1,4 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { Subject } from 'rxjs';
-
 
 @Injectable()
 export class SharedService {
@@ -22,5 +18,6 @@ export class SharedService {
     setFilterValue(value){
         this.filterValue = value;
     }
+   
 }
 
