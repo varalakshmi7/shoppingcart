@@ -1,6 +1,5 @@
 import { Component, OnInit} from '@angular/core';
 import { SharedService } from '../shared.service';
-import {DOCUMENT} from '@angular/common';
 import { Observable } from 'rxjs';
 import { increment, decrement } from '../action';
 import { Store } from '@ngrx/store';
@@ -52,7 +51,7 @@ export class CartComponent implements OnInit {
     
   }
 
-  removeItem(i) { console.log(this.cartItems);
+  removeItem(i) {
       if(i > -1){
         this.cartItems.splice(i,1);
        }
